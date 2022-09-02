@@ -1,0 +1,5 @@
+dataset/
+*-checkpoint.ipynb
+*-checkpoint.py
+*.pyc
+*.DS_Store
