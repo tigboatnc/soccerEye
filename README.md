@@ -19,7 +19,7 @@ __Open Source toolkit for soccer analytics__
 - [ ] Ball Identification + Localization `BL`
     - Identifying and localizing soccer ball in the field 
 
-## Analytics Tools
+## Analytics 
 - [ ] 2D Birds Eye View 
     - Converting the footage to birds eye view with players and ball mapped 
 - [ ] Penalty Analyzer 
@@ -39,4 +39,3 @@ __Open Source toolkit for soccer analytics__
 
 # Future 
 - Ship as a library rather than scripts 
-- 
