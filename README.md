@@ -27,8 +27,15 @@ __Open Source toolkit for soccer analytics__
         - Ball Curvature 
         - Ball Speed 
         - Shooter Pose 
+- [ ] Pattern Crunching 
+    - Given a few games of a team, pattern and play recognition for any given team and good counter-patterns. 
+    - Analysing attack patterns of teams. 
+- [ ] Player Analysis 
+    - Discovering player patterns (passing left, right etc.) and biases for building counter patterns. 
 
-> Submit additional feature requests as PR 
+
+
+--------------------
 
 # Requirements 
 - OpenCV 
@@ -39,3 +46,7 @@ __Open Source toolkit for soccer analytics__
 
 # Future 
 - Ship as a library rather than scripts 
+
+# Resources 
+> Submit additional feature requests as PR 
+- [DevTo/Stephan007](https://dev.to/stephan007/open-source-sports-video-analysis-using-maching-learning-2ag4)
