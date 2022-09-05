@@ -1,6 +1,6 @@
 # Soccer Eye 
 
-__Open Source toolkit for soccer analytics__
+__Open Source modular toolkit for soccer footage analytics__
 
 
 # Head
@@ -47,9 +47,21 @@ __Open Source toolkit for soccer analytics__
 # Future 
 - Ship as a library rather than scripts 
 
+
+# Module Demos 
+> coming soon !!!
+
 # Challenges 
 __Background Variations__<br/>
-![background_variation]('./assets/background_variation.png')
+![background_variation](./assets/background_variation.png)
+
+__Angle Variations__<br/>
+![angle_variation](./assets/angle_variation.png)
+
+__Feed Specific Variations__<br/>
+![feed_variation](./assets/feed_variation.png)
+
+
 
 # Resources 
 > Submit additional feature requests as PR 
