@@ -2,6 +2,7 @@
 
 __Open Source modular toolkit for soccer footage analytics__
 
+[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 
 # Head
 - Compatible with televised game footage(dynamic)
@@ -63,6 +64,8 @@ __Feed Specific Variations__<br/>
 
 
 
-# Resources 
-> Submit additional feature requests as PR 
+# Resources, References, Credits. 
 - [DevTo/Stephan007](https://dev.to/stephan007/open-source-sports-video-analysis-using-maching-learning-2ag4)
+- [PyImageSearch](https://pyimagesearch.com/blog/)
+- [Kaggle Bundesliga Dataset](https://www.kaggle.com/competitions/dfl-bundesliga-data-shootout)
+- [SoccerNet](https://www.soccer-net.org)
