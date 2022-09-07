@@ -33,6 +33,9 @@ __Open Source modular toolkit for soccer footage analytics__
     - Analysing attack patterns of teams. 
 - [ ] Player Analysis 
     - Discovering player patterns (passing left, right etc.) and biases for building counter patterns. 
+- [ ] Shooting Hotspots
+    - Determining best placements for succesful shotmaking against specific teams. 
+    - Based on advancing ideas as worked on [here](https://github.com/danielazevedo/Football-Analytics/blob/master/expected_goals/xG_model_SVM.ipynb)
 
 
 
