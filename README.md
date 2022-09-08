@@ -4,10 +4,10 @@ __Open Source modular toolkit for soccer footage analytics__
 
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 
-# Head
+# Goals
 - Compatible with televised game footage(dynamic)
-- Should work with static full field footage 
-- Utilized cutting edge machine learning models + tried and tested computer vision algorithms 
+- Should work with static full field frames + Dynamic occluded frames
+
 
 
 # Checkpoints + Feature List 
