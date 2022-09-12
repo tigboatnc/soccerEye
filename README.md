@@ -4,6 +4,26 @@ __Open Source modular toolkit for soccer footage analytics__
 
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 
+
+
+
+
+
+ # Highlights 
+## Field Isolation (Using FPN, ResNet Image Segmentation)
+
+
+
+
+
+|Demo|Training/Build|Inference/Pipeline Definition|Description|
+|-|-|-|-|
+|![Field Isolation FPV](./assets/field_isolation_fpn.gif) |[field_isolation_fpn](./experiments/fpn-1_training_colab.ipynb)|[field_isolation_FPN...](./experiments/field_isolation_FPN_FieldMask_1_INFERENCEVIDEO.ipynb)|FPN + Resnet 34 backbone custom trained field isolation, creates masks at 256x256.   `relatively fast cpu inference`|
+|![Field Isolation PIPE](./assets/field_isolation_pipe1.gif) |[field_isolation_pixelation](./experiments/field_isolation_cv.ipynb)|[methods.P_IF_3](./methods.py)|Pixelation - Adaptive Color Normalization - Thresholding based pipeline for field isolation, creates masks. `less accurate but  faster than NN based methods`|
+
+
+
+
 # Goals
 - Compatible with televised game footage(dynamic)
 - Should work with static full field frames + Dynamic occluded frames

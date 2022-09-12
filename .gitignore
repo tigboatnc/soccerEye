@@ -3,3 +3,4 @@ dataset/
 *-checkpoint.py
 *.pyc
 *.DS_Store
+weights/

@@ -90,7 +90,7 @@ def P_IF_3(frame,kernel_size=80,hsv_sens=20,pix_size=90):
     return mask
     
 
-def P_IF_4_FPN(data,inputType = 'single',device='cpu',CHECKPOINT_LOCATION):
+def P_IF_4_FPN(data,CHECKPOINT_LOCATION,inputType = 'single',device='cpu'):
     # data can be an image : Image.open('imgaddress')
     # or data can be a list of similarly formatted images 
     # device = cpu | cuda 
@@ -101,7 +101,7 @@ def P_IF_4_FPN(data,inputType = 'single',device='cpu',CHECKPOINT_LOCATION):
         model = models.FPN_FieldMask_1("FPN", "resnet34", in_channels=3, out_classes=1)
         model.load_state_dict(checkpoint['state_dict'])
 
-        image = FPN_FieldMask_1_preprocess(data,inputType)
+        image = models.FPN_FieldMask_1_preprocess(data,inputType)
 
         with torch.no_grad():
             model.eval()
@@ -116,15 +116,18 @@ def P_IF_4_FPN(data,inputType = 'single',device='cpu',CHECKPOINT_LOCATION):
         model = models.FPN_FieldMask_1("FPN", "resnet34", in_channels=3, out_classes=1)
         model.load_state_dict(checkpoint['state_dict'])
 
-        datalist = FPN_FieldMask_1_preprocess(data,inputType)
+        datalist = models.FPN_FieldMask_1_preprocess(data,inputType)
         OP = []
-        
+
         with torch.no_grad():
             model.eval()
 
             for image in datalist:
                 logits = model(image)
                 pr_mask = logits.sigmoid()
+                OP.append(pr_mask.numpy().squeeze())
+        
+        return OP
 
 
 
