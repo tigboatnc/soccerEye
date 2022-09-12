@@ -1,6 +1,21 @@
 import cv2 
 import numpy as np 
+import torch
+import numpy as np
+import PIL
+from PIL import Image
+import pytorch_lightning as pl
+import segmentation_models_pytorch as smp
+from matplotlib import pyplot as plt
 
+
+import models 
+
+
+
+
+
+# Field Isolation 
 
 def P_IF_1(frame,kernel_size=80,hsv_sens=140):
     # I = BGR 
@@ -74,3 +89,43 @@ def P_IF_3(frame,kernel_size=80,hsv_sens=20,pix_size=90):
     mask = cv2.inRange(frame_hsv, lower_green, upper_green)
     return mask
     
+
+def P_IF_4_FPN(data,inputType = 'single',device='cpu',CHECKPOINT_LOCATION):
+    # data can be an image : Image.open('imgaddress')
+    # or data can be a list of similarly formatted images 
+    # device = cpu | cuda 
+
+    if inputType == 'single':
+
+        checkpoint = torch.load(CHECKPOINT_LOCATION,map_location=torch.device(device) )
+        model = models.FPN_FieldMask_1("FPN", "resnet34", in_channels=3, out_classes=1)
+        model.load_state_dict(checkpoint['state_dict'])
+
+        image = FPN_FieldMask_1_preprocess(data,inputType)
+
+        with torch.no_grad():
+            model.eval()
+            logits = model(image)
+        
+        pr_mask = logits.sigmoid()
+        return pr_mask.numpy().squeeze()
+    
+    if inputType == 'list':
+
+        checkpoint = torch.load(CHECKPOINT_LOCATION,map_location=torch.device(device) )
+        model = models.FPN_FieldMask_1("FPN", "resnet34", in_channels=3, out_classes=1)
+        model.load_state_dict(checkpoint['state_dict'])
+
+        datalist = FPN_FieldMask_1_preprocess(data,inputType)
+        OP = []
+        
+        with torch.no_grad():
+            model.eval()
+
+            for image in datalist:
+                logits = model(image)
+                pr_mask = logits.sigmoid()
+
+
+
+
