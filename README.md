@@ -16,7 +16,7 @@ __Open Source modular toolkit for soccer footage analytics__
 
 
 
-|Demo|Training/Build|Inference/Pipeline Definition|Description|
+|Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
 |-|-|-|-|
 |![Field Isolation FPV](./assets/field_isolation_fpn.gif) |[field_isolation_fpn](./experiments/fpn-1_training_colab.ipynb)|[field_isolation_FPN...](./experiments/field_isolation_FPN_FieldMask_1_INFERENCEVIDEO.ipynb)|FPN + Resnet 34 backbone custom trained field isolation, creates masks at 256x256.   `relatively fast cpu inference`|
 |![Field Isolation PIPE](./assets/field_isolation_pipe1.gif) |[field_isolation_pixelation](./experiments/field_isolation_cv.ipynb)|[methods.P_IF_3](./methods.py)|Pixelation - Adaptive Color Normalization - Thresholding based pipeline for field isolation, creates masks. `less accurate but  faster than NN based methods`|
