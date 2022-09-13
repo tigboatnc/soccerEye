@@ -132,3 +132,47 @@ def P_IF_4_FPN(data,CHECKPOINT_LOCATION,inputType = 'single',device='cpu'):
 
 
 
+def P_IF_4_FPN_CV2(data,CHECKPOINT_LOCATION,inputType = 'single',device='cpu'):
+    # data has to be an image from opencv typeset 
+    # uniformity function
+    # or data can be a list of similarly formatted images 
+    # device = cpu | cuda 
+
+    if inputType == 'single':
+
+        checkpoint = torch.load(CHECKPOINT_LOCATION,map_location=torch.device(device) )
+        model = models.FPN_FieldMask_1("FPN", "resnet34", in_channels=3, out_classes=1)
+        model.load_state_dict(checkpoint['state_dict'])
+        
+        # Convert to PIL 
+        im_pil = Image.fromarray(data)
+        
+        image = models.FPN_FieldMask_1_preprocess(im_pil,inputType)
+
+        with torch.no_grad():
+            model.eval()
+            logits = model(image)
+        
+        pr_mask = logits.sigmoid()
+        return pr_mask.numpy().squeeze()
+    
+    if inputType == 'list':
+
+        checkpoint = torch.load(CHECKPOINT_LOCATION,map_location=torch.device(device) )
+        model = models.FPN_FieldMask_1("FPN", "resnet34", in_channels=3, out_classes=1)
+        model.load_state_dict(checkpoint['state_dict'])
+        
+        data2 = [Image.fromarray(x) for x in data]
+        datalist = models.FPN_FieldMask_1_preprocess(data2,inputType)
+        OP = []
+
+        with torch.no_grad():
+            model.eval()
+
+            for image in datalist:
+                
+                logits = model(image)
+                pr_mask = logits.sigmoid()
+                OP.append(pr_mask.numpy().squeeze())
+        
+        return OP

@@ -113,3 +113,4 @@ __Feed Specific Variations__<br/>
 - [PyImageSearch](https://pyimagesearch.com/blog/)
 - [Kaggle Bundesliga Dataset](https://www.kaggle.com/competitions/dfl-bundesliga-data-shootout)
 - [SoccerNet](https://www.soccer-net.org)
+- [Ransac Good Read](https://sdg002.github.io/ransac-circle/index.html)
