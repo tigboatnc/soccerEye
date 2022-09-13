@@ -17,26 +17,34 @@ Isolating the field in a frame for the purposes of ROI minimization used as a pr
 
 |Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
 |-|-|-|-|
-|![Field Isolation FPV](./assets/field_isolation_fpn.gif) Created using custom annotated [Bundesliga Dataset](https://www.kaggle.com/competitions/dfl-bundesliga-data-shootout)|[field_isolation_fpn](./experiments/fpn-1_training_colab.ipynb)|[field_isolation_FPN...](./experiments/field_isolation_FPN_FieldMask_1_INFERENCEVIDEO.ipynb)|FPN + Resnet 34 backbone custom trained field isolation, __creates masks at 256x256__. <br/>   `relatively fast cpu inference`|
-|![Field Isolation PIPE](./assets/field_isolation_pipe1.gif) |[field_isolation_pixelation](./experiments/field_isolation_cv.ipynb)|[methods.P_IF_3](./methods.py)|Pixelation -> Adaptive Color Normalization -> Thresholding based pipeline for field isolation, __creates masks at original size__. <br/>`less accurate but  faster than NN based methods`|
+|![Field Isolation FPV](./assets/field_isolation_fpn.gif) Created using custom annotated [Bundesliga Dataset](https://www.kaggle.com/competitions/dfl-bundesliga-data-shootout)|[field_isolation_fpn](https://github.com/tigboatnc/soccerEye/blob/main//experiments/fpn-1_training_colab.ipynb)|[field_isolation_FPN...](https://github.com/tigboatnc/soccerEye/blob/main/experiments/field_isolation_FPN_FieldMask_1_INFERENCEVIDEO.ipynb)|FPN + Resnet 34 backbone custom trained field isolation, __creates masks at 256x256__. <br/>   `relatively fast cpu inference`|
+|![Field Isolation PIPE](./assets/field_isolation_pipe1.gif) |[field_isolation_pixelation](https://github.com/tigboatnc/soccerEye/blob/main/experiments/field_isolation_cv.ipynb)|[methods.P_IF_3](https://github.com/tigboatnc/soccerEye/blob/main/methods.py)|Pixelation -> Adaptive Color Normalization -> Thresholding based pipeline for field isolation, __creates masks at original size__. <br/>`less accurate but  faster than NN based methods`|
 
 
 ## Field Parameter Estimation 
 Analysing videos and for each still frame, finding out the field parameters with respect to the current frame and the full field. 
 > Useful preprocessing step for 3D->2D translation and statistics based on field locations. 
 
+
+
 |Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
 |-|-|-|-|
 |-|-|-|-|
 
 ## Player Identification and Tracking 
-Identifying soccer players within the field and 
+Identifying soccer players within the field and tracking target players, methods for both still frames and dynamic frames including reidentification methods. 
+
+> Useful for analyzing tendencies, specially when tracked with the context of ball location. 
+
+
+
 
 |Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
 |-|-|-|-|
-|-|-|-|-|
+|![Tracking](./assets/tracking_vanilla.gif)|-|[Tracking using Multi Instance Learner ](https://github.com/tigboatnc/soccerEye/blob/main/experiments/tracking-intro.py)|Using Multi Instance Learner in contrib for player tracking <br/> `Only usable in still frame` |
 
 
+extras.ipynb
 
 
 
