@@ -1,38 +1,54 @@
-# Soccer Eye 
+__End-to-end modular components for soccer footage analytics__
 
-__Open Source modular toolkit for soccer footage analytics__
 
+<!-- 
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
+ -->
 
 
 
 
 
+# Highlights 
+## Field Isolation 
+Isolating the field in a frame for the purposes of ROI minimization used as a preprocessing step or context specification. 
 
- # Highlights 
-## Field Isolation (Using FPN, ResNet Image Segmentation)
-
-
-
-
+> Useful for contextual masking and improving accuracy of vision models downstream.  
 
 |Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
 |-|-|-|-|
-|![Field Isolation FPV](./assets/field_isolation_fpn.gif) |[field_isolation_fpn](./experiments/fpn-1_training_colab.ipynb)|[field_isolation_FPN...](./experiments/field_isolation_FPN_FieldMask_1_INFERENCEVIDEO.ipynb)|FPN + Resnet 34 backbone custom trained field isolation, creates masks at 256x256.   `relatively fast cpu inference`|
-|![Field Isolation PIPE](./assets/field_isolation_pipe1.gif) |[field_isolation_pixelation](./experiments/field_isolation_cv.ipynb)|[methods.P_IF_3](./methods.py)|Pixelation - Adaptive Color Normalization - Thresholding based pipeline for field isolation, creates masks. `less accurate but  faster than NN based methods`|
+|![Field Isolation FPV](./assets/field_isolation_fpn.gif) Created using custom annotated [Bundesliga Dataset](https://www.kaggle.com/competitions/dfl-bundesliga-data-shootout)|[field_isolation_fpn](./experiments/fpn-1_training_colab.ipynb)|[field_isolation_FPN...](./experiments/field_isolation_FPN_FieldMask_1_INFERENCEVIDEO.ipynb)|FPN + Resnet 34 backbone custom trained field isolation, __creates masks at 256x256__. <br/>   `relatively fast cpu inference`|
+|![Field Isolation PIPE](./assets/field_isolation_pipe1.gif) |[field_isolation_pixelation](./experiments/field_isolation_cv.ipynb)|[methods.P_IF_3](./methods.py)|Pixelation -> Adaptive Color Normalization -> Thresholding based pipeline for field isolation, __creates masks at original size__. <br/>`less accurate but  faster than NN based methods`|
+
+
+## Field Parameter Estimation 
+Analysing videos and for each still frame, finding out the field parameters with respect to the current frame and the full field. 
+> Useful preprocessing step for 3D->2D translation and statistics based on field locations. 
+
+|Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
+|-|-|-|-|
+|-|-|-|-|
+
+## Player Identification and Tracking 
+Identifying soccer players within the field and 
+
+|Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
+|-|-|-|-|
+|-|-|-|-|
 
 
 
 
-# Goals
-- Compatible with televised game footage(dynamic)
+
+# Project Goals
+- Compatible with televised game footage (dynamically shifting frames)
 - Should work with static full field frames + Dynamic occluded frames
 
 
 
 # Checkpoints + Feature List 
 ## Tooling 
-- [ ] Field Localization `FL`
+- [x] Field Localization `FL`
     - Locating the field in a frame 
 - [ ] Player Identification + Localization `PL`
     - Identifying player by jersy numbers 
@@ -59,7 +75,7 @@ __Open Source modular toolkit for soccer footage analytics__
 
 
 
---------------------
+
 
 # Requirements 
 - OpenCV 
@@ -68,14 +84,11 @@ __Open Source modular toolkit for soccer footage analytics__
 - TensorFlow
 
 
-# Future 
-- Ship as a library rather than scripts 
+# Domain Description 
+
+Useful in understanding the challenges faced in the field of sports analytics and visualizing edge cases. 
 
 
-# Module Demos 
-> coming soon !!!
-
-# Challenges 
 __Background Variations__<br/>
 ![background_variation](./assets/background_variation.png)
 
@@ -86,8 +99,8 @@ __Feed Specific Variations__<br/>
 ![feed_variation](./assets/feed_variation.png)
 
 
-
-# Resources, References, Credits. 
+# Extras
+## Resources, References, Credits. 
 - [DevTo/Stephan007](https://dev.to/stephan007/open-source-sports-video-analysis-using-maching-learning-2ag4)
 - [PyImageSearch](https://pyimagesearch.com/blog/)
 - [Kaggle Bundesliga Dataset](https://www.kaggle.com/competitions/dfl-bundesliga-data-shootout)
