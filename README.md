@@ -29,7 +29,7 @@ Analysing videos and for each still frame, finding out the field parameters with
 
 |Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
 |-|-|-|-|
-|otw|-|-|-|
+|![](./assets/field_parameter_test_1.gif)|[field_parameter_lines](https://github.com/tigboatnc/soccerEye/blob/main/experiments/field_parameter_lines.ipynb)|-|Detecting bounds w.r.t the current frame|
 
 ## Player Identification and Tracking 
 Identifying soccer players within the field and tracking target players, methods for both still frames and dynamic frames including reidentification methods. 

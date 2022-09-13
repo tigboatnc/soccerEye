@@ -4,3 +4,4 @@ dataset/
 *.pyc
 *.DS_Store
 weights/
+outputs/
