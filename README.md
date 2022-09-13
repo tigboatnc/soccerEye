@@ -1,4 +1,4 @@
-__End-to-end modular components for soccer footage analytics__
+__Modular components for end-to-end soccer footage analytics__
 
 
 <!-- 
