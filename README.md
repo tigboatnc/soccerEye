@@ -29,7 +29,7 @@ Analysing videos and for each still frame, finding out the field parameters with
 
 |Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
 |-|-|-|-|
-|-|-|-|-|
+|otw|-|-|-|
 
 ## Player Identification and Tracking 
 Identifying soccer players within the field and tracking target players, methods for both still frames and dynamic frames including reidentification methods. 
