@@ -82,6 +82,14 @@ extras.ipynb
     - Based on advancing ideas as worked on [here](https://github.com/danielazevedo/Football-Analytics/blob/master/expected_goals/xG_model_SVM.ipynb)
 
 
+# Models 
+
+
+|Model Description|Task|Weights|SHA1|Notebooks|
+|-|-|-|-|-|
+|FPN + Resnet34 Image Segmentation|Field Isolation|[mediafire](https://www.mediafire.com/file/68yg98ek8cf3gbo/FPN_FieldMask_1.7z/file)|bab4db16e94ca9145df7030ca4dd1bc7899828a5|[training](https://github.com/tigboatnc/soccerEye/blob/main//experiments/fpn-1_training_colab.ipynb)  / [inference](https://github.com/tigboatnc/soccerEye/blob/main/experiments/field_isolation_FPN_FieldMask_1_INFERENCEVIDEO.ipynb)|
+
+
 
 
 
