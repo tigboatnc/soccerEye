@@ -42,9 +42,8 @@ Identifying soccer players within the field and tracking target players, methods
 |Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Training/Build|Inference/Pipeline Definition|Description|
 |-|-|-|-|
 |![Tracking](./assets/tracking_vanilla.gif)|-|[Tracking using Multi Instance Learner ](https://github.com/tigboatnc/soccerEye/blob/main/experiments/tracking-intro.py)|Using Multi Instance Learner in contrib for player tracking <br/> `Only usable in still frame` |
+|![Player Team Identification](./assets/player_team_identification.png)|[team_identification](https://github.com/tigboatnc/soccerEye/blob/main/experiments/team_identification.ipynb)|[methods.P_CB_1](https://github.com/tigboatnc/soccerEye/blob/main/methods.py)|Identifying player teams using K-Means color binning of detected bounding boxes|
 
-
-extras.ipynb
 
 
 
