@@ -1,7 +1,9 @@
 dataset/
+datasets/
 *-checkpoint.ipynb
 *-checkpoint.py
 *.pyc
 *.DS_Store
 weights/
 outputs/
+experiments/*.avi

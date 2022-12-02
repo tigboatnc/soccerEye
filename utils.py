@@ -87,3 +87,16 @@ def applyToVideo(function,cap,skip=1,stack_original=False):
 
 
     
+def get_all_files_in_dir(directory: Path):   
+    # Returns a list of all files in a directory, requires Path as I/P
+    file_list = [] # A list for storing files existing in directories
+
+    for x in directory.iterdir():
+        if x.is_file():
+
+           file_list.append(x)
+        else:
+
+           file_list.append(searching_all_files(directory/x))
+
+    return file_list

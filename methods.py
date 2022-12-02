@@ -7,8 +7,7 @@ from PIL import Image
 import pytorch_lightning as pl
 import segmentation_models_pytorch as smp
 from matplotlib import pyplot as plt
-
-
+from tqdm import tqdm
 import models 
 
 
@@ -169,7 +168,7 @@ def P_IF_4_FPN_CV2(data,CHECKPOINT_LOCATION,inputType = 'single',device='cpu'):
         with torch.no_grad():
             model.eval()
 
-            for image in datalist:
+            for image in tqdm(datalist):
                 
                 logits = model(image)
                 pr_mask = logits.sigmoid()
