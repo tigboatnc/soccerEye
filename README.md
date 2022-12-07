@@ -6,12 +6,14 @@ __Modular components for end-to-end soccer footage analytics__
  -->
 
 # Using SoccerEye and off-the-shelf detection modules 
+![Full Scene 0](./assets/lines.gif)
 ![Full Scene](./assets/output-histogram-matching__1__AdobeExpress_AdobeExpress.gif)
 ![Full Scene 2](./assets/output-histogram-matching__2__AdobeExpress_AdobeExpress_AdobeExpress.gif)
 
 - Using K-Means clustering for team identification 
 - Using Custom Field Isolation 
 - Using Tensorflow model Zoo (ResNet152,EfficientDet D3) for player detection
+- Line finding using Hough line predictor 
 - [Colab]()
 
 
