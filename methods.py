@@ -11,7 +11,11 @@ from tqdm import tqdm
 import models 
 
 
-
+import tensorflow as tf
+import pathlib
+import numpy as np
+from PIL import Image
+import pandas as pd
 
 
 # Field Isolation 
@@ -175,3 +179,57 @@ def P_IF_4_FPN_CV2(data,CHECKPOINT_LOCATION,inputType = 'single',device='cpu'):
                 OP.append(pr_mask.numpy().squeeze())
         
         return OP
+
+def P_PI_1_OD(frame,model,accuracy=0.7):
+  # detects based on tensorflow models 
+  # frame : np image 
+  # model : tf model 
+  # accuracy : float
+  image_np = frame.copy()
+  im_height,im_width,_ = image_np.shape
+  input_tensor = tf.convert_to_tensor(image_np)
+  input_tensor = input_tensor[tf.newaxis,...]
+  model_fn = model.signatures['serving_default']
+  output_dict = model_fn(input_tensor)
+  num_detections = int(output_dict.pop('num_detections'))
+  output_dict = {key:value[0, :num_detections].numpy() 
+                  for key,value in output_dict.items()}
+  output_dict['num_detections'] = num_detections
+  # detection_classes should be ints.
+  output_dict['detection_classes'] = output_dict['detection_classes'].astype(np.int64)
+    
+  op = []
+  for i in range(num_detections):
+    op.append(
+        {
+            'box':output_dict['detection_boxes'][i],
+            'score':output_dict['detection_scores'][i],
+            'class':output_dict['detection_classes'][i]
+        }
+    )
+
+  op = pd.DataFrame(op)
+  op = op[op['class']==1]
+  op = op[op['score']>accuracy]
+  boxes_pixel = []
+
+  for ind,rows in op.iterrows():
+    ymin, xmin, ymax, xmax = rows['box']
+    (left, right, top, bottom) = (xmin * im_width, xmax * im_width,
+                                  ymin * im_height, ymax * im_height)
+    tl = (int(left),int(top))
+    br = (int(right),int(bottom))
+    boxes_pixel.append([tl,br])
+
+  op['box_pixel'] =boxes_pixel
+  return op 
+
+
+def P_PI_1_OD_BOX(frame,detectionDF,color=(180,0,0),thickness=3):
+  imcpy = frame.copy()
+  # Create boxes for detections 
+  for i,row in detectionDF.iterrows():
+    tl,br = row['box_pixel']
+    imcpy = cv2.rectangle(imcpy, tl, br, color, thickness)
+  
+  return imcpy
