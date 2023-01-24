@@ -1,11 +1,14 @@
+
+# SoccerEye 
 __Modular components for end-to-end soccer footage analytics__
+
 
 
 <!-- 
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
  -->
 
-# Using SoccerEye and off-the-shelf detection modules 
+
 ![Full Scene 0](./assets/lines.gif)
 ![Full Scene](./assets/output-histogram-matching__1__AdobeExpress_AdobeExpress.gif)
 ![Full Scene 2](./assets/output-histogram-matching__2__AdobeExpress_AdobeExpress_AdobeExpress.gif)
